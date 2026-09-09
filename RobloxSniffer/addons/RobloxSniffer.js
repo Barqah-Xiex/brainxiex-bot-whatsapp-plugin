@@ -2,6 +2,8 @@
 module.exports = function (sock) {
   const { sendMessage, config, resize, media2buffer, MyIP, func, store } = sock;
   const { Prefix, banner, Nama_Bot, apikey, baseURL, Nomor_Owner } = config;
+  const {isset, sleep, axios} = func
+
 
   store.plugin.RobloxSniffer = store.plugin.RobloxSniffer || {
     state: "stop",
@@ -69,7 +71,7 @@ module.exports = function (sock) {
 
     async function dariAPI(username) {
       try {
-        const { data } = await func.axios.post(`${baseURL}/api/tools/robloxstalk`, { apikey, username }, { headers: { nolog: true } });
+        const { data } = await axios.post(`${baseURL}/api/tools/robloxstalk`, { apikey, username }, { headers: { nolog: true } });
         if(data.error) return data;
         return data.Barqah;
       } catch (err) {
