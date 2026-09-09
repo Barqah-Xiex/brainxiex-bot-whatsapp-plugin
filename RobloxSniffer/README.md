@@ -13,6 +13,10 @@ Jalankan perintah berikut pada mesin yang menjalankan framework plugin:
 ```sh
 ./linux plugin install gh:Barqah-Xiex/brainxiex-bot-whatsapp-plugin/RobloxSniffer
 ```
+atau
+```sh
+./linux plugin install brainxiex:git/botwa-plugin/RobloxSniffer
+```
 
 Penghapusan (Uninstall)
 -------
@@ -20,6 +24,10 @@ Untuk menghapus plugin:
 
 ```sh
 ./linux plugin uninstall gh:Barqah-Xiex/brainxiex-bot-whatsapp-plugin/RobloxSniffer
+```
+atau
+```sh
+./linux plugin uninstall brainxiex:git/botwa-plugin/RobloxSniffer
 ```
 
 Penggunaan singkat
