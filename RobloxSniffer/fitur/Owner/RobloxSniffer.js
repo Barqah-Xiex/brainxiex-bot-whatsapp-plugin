@@ -35,8 +35,9 @@ async function message(sock, m, store) {
 
             store.plugin.RobloxSniffer.delay = delay;
 
-            store.save();
-            return nyarios(`*[ ok ] Delay Updated !*\nDelay: ${delay} detik`);
+            await nyarios(`*[ ok ] Delay Updated !*\nDelay: ${delay} detik`);
+            await store.save();
+            return process.exit(0);
         }
 
         case "push":
@@ -54,8 +55,10 @@ async function message(sock, m, store) {
             store.plugin.RobloxSniffer.target.push(fromAPI.info.username);
             store.plugin.RobloxSniffer.target = [...new Set(store.plugin.RobloxSniffer.target)];
 
-            store.save();
-            return nyarios(`*[ ok ] User Found !*\nDisplay Name: ${fromAPI.info.displayName}\nUsername: ${fromAPI.info.username}`);
+            await nyarios(`*[ ok ] User Found !*\nDisplay Name: ${fromAPI.info.displayName}\nUsername: ${fromAPI.info.username}`);
+            await store.save();
+            return process.exit(0);
+            
         }
 
         case "rm":
@@ -69,8 +72,9 @@ async function message(sock, m, store) {
 
             const removed = store.plugin.RobloxSniffer.target.splice(index, 1)[0];
 
-            store.save();
-            return nyarios(`*[ ok ] User Removed !*\nUsername: ${removed}`);
+            await nyarios(`*[ ok ] User Removed !*\nUsername: ${removed}`);
+            await store.save();
+            return process.exit(0);
         }
 
         case "ls":
@@ -80,7 +84,6 @@ async function message(sock, m, store) {
 
             if(!target.length) return nyarios(`Tidak ada target !`);
 
-            store.save();
             return nyarios(`*[ RobloxSniffer Target ]*\n\n${target.map((x,i) => `${i + 1}. ${x}`).join("\n")}`);
         }
 
