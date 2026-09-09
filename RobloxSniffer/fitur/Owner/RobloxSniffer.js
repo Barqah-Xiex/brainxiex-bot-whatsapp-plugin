@@ -6,7 +6,7 @@ async function message(sock, m, store) {
     const {sendMessage, config,resize,media2buffer, MyIP, func, editMessage, player, jobName, jobID, rpg, random, achivment} = sock;
     const {chat: id, body, arg, isOwner, nyarios} = m;
     const {Prefix,banner,Nama_Bot,apikey,baseURL} = config;
-    const {isset} = func
+    const {isset, sleep} = func
 
     if(!isOwner || config.isJadibot) return nyarios("kamu tidak dapat menggunakan command ini!");
 
