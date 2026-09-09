@@ -15,7 +15,7 @@ Jalankan perintah berikut pada mesin yang menjalankan framework plugin:
 ```
 atau
 ```sh
-./linux plugin install brainxiex:git/botwa-plugin/RobloxSniffer
+./linux plugin install bx:cdn/botwa-plugin/RobloxSniffer
 ```
 
 Penghapusan (Uninstall)
@@ -27,7 +27,7 @@ Untuk menghapus plugin:
 ```
 atau
 ```sh
-./linux plugin uninstall brainxiex:git/botwa-plugin/RobloxSniffer
+./linux plugin uninstall bx:cdn/botwa-plugin/RobloxSniffer
 ```
 
 Penggunaan singkat
