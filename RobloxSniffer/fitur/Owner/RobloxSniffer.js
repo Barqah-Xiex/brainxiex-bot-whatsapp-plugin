@@ -55,7 +55,7 @@ async function message(sock, m, store) {
             store.plugin.RobloxSniffer.target = [...new Set(store.plugin.RobloxSniffer.target)];
 
             store.save();
-            return nyarios(`*[ ok ] User Found ! [ ok ]*\nDisplay Name: ${fromAPI.info.displayName}\nUsername: ${fromAPI.info.username}`);
+            return nyarios(`*[ ok ] User Found !*\nDisplay Name: ${fromAPI.info.displayName}\nUsername: ${fromAPI.info.username}`);
         }
 
         case "rm":
@@ -70,7 +70,7 @@ async function message(sock, m, store) {
             const removed = store.plugin.RobloxSniffer.target.splice(index, 1)[0];
 
             store.save();
-            return nyarios(`*[ ok ] User Removed ! [ ok ]*\nUsername: ${removed}`);
+            return nyarios(`*[ ok ] User Removed !*\nUsername: ${removed}`);
         }
 
         case "ls":
