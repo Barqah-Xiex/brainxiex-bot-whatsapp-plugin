@@ -33,7 +33,7 @@ module.exports = function (sock) {
           console.error(`${res.error}`)
           console.error(`===========================================`)
           console.error(`-------------------------------------------`)
-          await sleep(30*60*1_000)
+          await sleep(store.plugin.RobloxSniffer.delay*1_000)
         }
 
         const info = res?.info;
