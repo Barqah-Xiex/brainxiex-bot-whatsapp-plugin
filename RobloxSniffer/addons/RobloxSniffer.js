@@ -18,7 +18,10 @@ module.exports = function (sock) {
       let last = "Offline";
 
       while (true) {
-        if (store.plugin.RobloxSniffer.state == "stop")
+        if (store.plugin.RobloxSniffer.state == "stop") {
+          await sleep(store.plugin.RobloxSniffer.delay * 1000);
+          continue;
+        }
         const res = await dariAPI(username);
 
         if(res.error) {
