@@ -2,7 +2,7 @@
 module.exports = function (sock) {
   const { sendMessage, config, resize, media2buffer, MyIP, func, store } = sock;
   const { Prefix, banner, Nama_Bot, apikey, baseURL, Nomor_Owner } = config;
-  const {isset, sleep, axios} = func
+  const {isset, sleep, axios} = func;
 
 
   store.plugin.RobloxSniffer = store.plugin.RobloxSniffer || {
