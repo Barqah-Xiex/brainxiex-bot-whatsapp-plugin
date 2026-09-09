@@ -20,10 +20,11 @@ async function message(sock, m, store) {
     switch ($1) {
         case "start":
             store.plugin.RobloxSniffer.state = "start"
+            store.save();
             return nyarios(`*[ ok ] RobloxSniffer Started !*`);
-
         case "stop":
             store.plugin.RobloxSniffer.state = "stop"
+            store.save();
             return nyarios(`*[ ok ] RobloxSniffer Stopped !*`);
 
         case "delay": {
@@ -34,6 +35,7 @@ async function message(sock, m, store) {
 
             store.plugin.RobloxSniffer.delay = delay;
 
+            store.save();
             return nyarios(`*[ ok ] Delay Updated !*\nDelay: ${delay} detik`);
         }
 
@@ -52,6 +54,7 @@ async function message(sock, m, store) {
             store.plugin.RobloxSniffer.target.push(fromAPI.info.username);
             store.plugin.RobloxSniffer.target = [...new Set(store.plugin.RobloxSniffer.target)];
 
+            store.save();
             return nyarios(`*[ ok ] User Found ! [ ok ]*\nDisplay Name: ${fromAPI.info.displayName}\nUsername: ${fromAPI.info.username}`);
         }
 
@@ -66,21 +69,25 @@ async function message(sock, m, store) {
 
             const removed = store.plugin.RobloxSniffer.target.splice(index, 1)[0];
 
+            store.save();
             return nyarios(`*[ ok ] User Removed ! [ ok ]*\nUsername: ${removed}`);
         }
 
+        case "ls":
         case "list":
         case "target": {
             const target = store.plugin.RobloxSniffer.target;
 
             if(!target.length) return nyarios(`Tidak ada target !`);
 
+            store.save();
             return nyarios(`*[ RobloxSniffer Target ]*\n\n${target.map((x,i) => `${i + 1}. ${x}`).join("\n")}`);
         }
 
         case "status":
         case "show":
         case "info":
+        case "list":
             return nyarios(
                 `*[ RobloxSniffer Status ]*\n\n` +
                 `State: ${store.plugin.RobloxSniffer.state}\n` +
