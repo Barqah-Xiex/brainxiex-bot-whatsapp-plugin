@@ -90,7 +90,6 @@ async function message(sock, m, store) {
         case "status":
         case "show":
         case "info":
-        case "list":
             return nyarios(
                 `*[ RobloxSniffer Status ]*\n\n` +
                 `State: ${store.plugin.RobloxSniffer.state}\n` +
