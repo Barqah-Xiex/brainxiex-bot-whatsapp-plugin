@@ -41,6 +41,8 @@ module.exports = function (sock) {
         const info = res?.info;
         const presence = res?.userPresences;
 
+        if(!info.displayName) continue;
+
         let ingame = presence?.lastLocation ?? "Online";
 
         if (ingame === "Website") ingame = "Online";
