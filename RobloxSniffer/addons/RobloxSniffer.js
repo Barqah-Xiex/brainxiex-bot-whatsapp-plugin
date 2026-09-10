@@ -43,9 +43,12 @@ module.exports = function (sock) {
 
         if(!info.displayName) continue;
 
-        let ingame = presence?.lastLocation ?? "Online";
+        let ingame = presence?.lastLocation ?? last;
 
         if (ingame === "Website") ingame = "Online";
+        
+        
+
         if (presence?.status === "Offline") {
           ingame = "Offline";
           await sleep(store.plugin.RobloxSniffer.delay * 1000 * 3);
